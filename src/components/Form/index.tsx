@@ -6,6 +6,8 @@ import { styles } from './styles';
 import { theme } from '../../theme';
 import { FeedbackType } from '../../components/Widget';
 import { feedbackTypes } from '../../utils/feedbackTypes';
+import { ScreenshotButton } from '../ScreenshotButton';
+import { Button } from '../Button';
 
 
 
@@ -41,6 +43,16 @@ export function Form({ feedbackType }: Props) {
             placeholder={"Tell us more what's going on..."}
             placeholderTextColor={theme.colors.text_secondary}
         />
+        <View style={styles.footer}>
+            <ScreenshotButton 
+                onTakeShot={() => {}}
+                onRemoveShot={() => {}}
+                screenshot=""
+            />
+            <Button 
+                isLoading={false}
+            />
+        </View>
     </View>
   );
 }
