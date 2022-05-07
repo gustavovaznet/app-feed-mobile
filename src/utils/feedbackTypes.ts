@@ -1,3 +1,4 @@
+//FEEDBACK TYPES
 export const feedbackTypes = {
   'BUG': {
     title: 'Problem',
@@ -12,4 +13,3 @@ export const feedbackTypes = {
     image: require('../assets/thought.png'),
   },
 };
-

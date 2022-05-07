@@ -1,6 +1,12 @@
+//SUCCESS COMPONENT
+
+//IMPORTING
+//REACT/REACT-NATIVE
 import React from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
+//ASSETS
 import successImg from '../../assets/success.png';
+//COMPONENTS
 import { Copyright } from '../Copyright';
 import { styles } from './styles';
 

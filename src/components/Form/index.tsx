@@ -1,17 +1,22 @@
+//FORM COMPONENT
+
+//IMPORTING
+//REACT/REACT-NATIVE
 import React, { useState } from 'react';
 import { View, TextInput, Image, Text, TouchableOpacity } from 'react-native';
 import { ArrowLeft } from 'phosphor-react-native';
-import * as FileSystem from 'expo-file-system';
 import { captureScreen } from 'react-native-view-shot';
-
+//THEME AND STYLES
 import { styles } from './styles';
 import { theme } from '../../theme';
+//COMPONENTS
 import { FeedbackType } from '../../components/Widget';
 import { feedbackTypes } from '../../utils/feedbackTypes';
 import { ScreenshotButton } from '../ScreenshotButton';
 import { Button } from '../Button';
+//API
 import { api } from '../../libs/api';
-
+import * as FileSystem from 'expo-file-system';
 
 
 interface Props {
@@ -27,6 +32,7 @@ export function Form({ feedbackType, onFeedbackCanceled, onFeedbackSent }: Props
 
     const feedbackTypeInfo = feedbackTypes[feedbackType];
 
+    //SCREENSHOT
     function handleScreenshot(){
         captureScreen({
             format: 'jpg',
@@ -36,10 +42,12 @@ export function Form({ feedbackType, onFeedbackCanceled, onFeedbackSent }: Props
         .catch(error => console.log(error));
     }
 
+    //SCREENSHOT REMOVE
     function handleScreenshotRemove(){
-
+        setScreenshot(null);
     }
 
+    //SEND FEEDBACK
     async function handleSendFeedback(){
         if(isSendingFeedback){
             return;
@@ -47,13 +55,13 @@ export function Form({ feedbackType, onFeedbackCanceled, onFeedbackSent }: Props
         setIsSendingFeedback(true);
         const screenshotBase64 = screenshot && await FileSystem.readAsStringAsync(screenshot, { encoding: 'base64' });
 
+        //VALIDATION
         try{
             await api.post('/feedbacks', {
                 type: feedbackType,
                 screenshot: `data:image/png;base64, ${screenshotBase64}`,
                 comment
             })
-
             onFeedbackSent();
 
         }catch(error){

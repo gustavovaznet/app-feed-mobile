@@ -1,3 +1,4 @@
+//THEME CSS COLORS
 export const theme = {
   colors: {
     brand: '#8257E5',

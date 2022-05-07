@@ -1,3 +1,6 @@
+//FORM STYLES
+
+//IMPORITNG
 import { StyleSheet } from 'react-native';
 import { theme } from '../../theme';
 
@@ -7,7 +10,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   header:{
-      flexdirection: 'row',
+      flexDirection: 'row',
       marginVertical: 16
   },
   titleContainer:{

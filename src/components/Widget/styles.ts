@@ -1,3 +1,6 @@
+//WIDGET STYLES
+
+//IMPORTING
 import { StyleSheet } from 'react-native';
 import { theme } from '../../theme';
 import { getBottomSpace } from 'react-native-iphone-x-helper';

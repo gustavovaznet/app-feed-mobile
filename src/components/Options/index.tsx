@@ -1,12 +1,17 @@
+//OPTIONS COMPONENT
+
+//IMPORITNG
+//REACT/REACT-NATIVE
 import React from 'react';
 import { View, Text } from 'react-native';
+//COMPONENTS
 import { Copyright } from '../Copyright';
 import { Option } from '../Option';
-
 import { feedbackTypes } from '../../utils/feedbackTypes';
 import { FeedbackType } from '../Widget';
+//THEMES AND STYLES
 import { styles } from './styles';
-import { Value } from 'react-native-reanimated';
+//import { Value } from 'react-native-reanimated';
 
 interface Props {
   onFeedbackTypeChanged: (feedbackType: FeedbackType) => void;

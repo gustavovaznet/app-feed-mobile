@@ -1,6 +1,11 @@
+//SCREENSHOT BUTTON COMPONENT
+
+//IMPORITNG
+//REACT/REACT-NATIVE
 import React from 'react';
 import { View, TouchableOpacity, Image } from 'react-native';
 import { Trash, Camera } from 'phosphor-react-native';
+//STYLES AND THEMES
 import { styles } from './styles';
 import { theme } from '../../theme';
 
